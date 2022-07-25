@@ -1,14 +1,15 @@
-﻿// 1. По двум заданным числам проверять является ли первое квадратом второго
+﻿// 2. Даны два числа. Показать большее и меньшее число
 
-Console.Write("Enter the number please: ");
-int num = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter the number in second power please: ");
-int numPow = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the first number please: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the second number please: ");
+int y = Convert.ToInt32(Console.ReadLine());
 
-void IfPowerMatches(int numb, int numbInPow)
+void BiggerSmaller(int fNum, int sNum)
 {
-    if (numbInPow == numb * numb) Console.Write($"{numbInPow} is {numb} in 2 power");
-    else Console.Write($"{numbInPow} isnt {numb} in 2 power");
+    if (fNum > sNum) Console.Write($"{fNum} is bigger, {sNum} is smaller.");
+    else if (fNum < sNum) Console.Write($"{sNum} is bigger, {fNum} is smaller.");
+    else Console.Write("The numbers are even.");
 }
 
-IfPowerMatches(num,numPow);
+BiggerSmaller(x,y);
