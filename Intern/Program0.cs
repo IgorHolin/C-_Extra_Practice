@@ -1,14 +1,14 @@
-﻿//  8. Показать четные числа от 1 до N
+﻿//  9. Показать последнюю цифру трёхзначного числа
 
 
-Console.Write("Enter the number please: ");
-int N = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the 3-digit number please: ");
+int num = Convert.ToInt32(Console.ReadLine());
 
-void Output(int num)
+do
 {
-    for (int i = 2; i <= N; i+=2)
-    {
-        Console.Write(i + " ");
-    }
-}
-Output(N);
+    Console.Write("Number should be more or equal 100 and less or equal 999! Enter once again: ");
+    int numb = Convert.ToInt32(Console.ReadLine());
+    num = numb;
+} while (num < 100 || num > 999);
+
+Console.Write($"The last digit in {num} is {num%10}");
