@@ -1,12 +1,14 @@
-﻿// 6. Выяснить является ли число чётным
+﻿// 7. Показать числа от -N до N
 
 Console.Write("Enter the number please: ");
-int x = Convert.ToInt32(Console.ReadLine());
+int N = Convert.ToInt32(Console.ReadLine());
 
-void EvenOrOdd(int number)
+void Output(int num)
 {
-    if (number % 2 == 0) Console.Write($"{number} is even.");
-    else Console.WriteLine($"{number} is odd.");
+    for (int i = -num; i <= num; i++)
+    {
+        Console.Write(i + " ");
+    }
 }
 
-EvenOrOdd(x);
+Output(N);
