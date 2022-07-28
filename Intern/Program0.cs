@@ -1,15 +1,14 @@
-﻿// 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
+﻿// 14. Найти третью цифру числа или сообщить, что её нет
 
 Console.Write("Enter the number please: ");
 int x = Convert.ToInt32(Console.ReadLine());
 
-int number = new Random().Next(1000,99999);
-Console.WriteLine($"Number to check - {number}");
-
-void Devide(int num, int numb)
+void NumberCheck(int num)
 {
-    if (numb%num == 0) Console.Write("Yes");
-    else Console.Write("NO");
+    string z = num.ToString();
+    if (num < 100 && num > -100) Console.Write("There is no 3-rd digit in this number.");
+    else if (num < -100) Console.Write(z[3]);
+    else Console.Write(z[2]);
 }
 
-Devide(number, x);
+NumberCheck(x);
