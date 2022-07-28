@@ -1,13 +1,17 @@
-﻿// 10. Показать вторую цифру трёхзначного числа
+﻿// 11. Дано число из отрезка [10, 99]. Показать наибольшую цифру числа
 
-Console.Write("Enter the 3-digit number please: ");
-int num = Convert.ToInt32(Console.ReadLine());
-
-do
+int NewNumber()
 {
-    Console.Write("Number should be more or equal 100 and less or equal 999! Enter once again: ");
-    int numb = Convert.ToInt32(Console.ReadLine());
-    num = numb;
-} while (num < 100 || num > 999);
+    int n = new Random().Next(10, 100);
+    return n;
+}
 
-Console.Write($"The second digit in {num} is {(num/10)%10}");
+int number = NewNumber();
+Console.WriteLine($"Your number is {number}");
+
+void BiggerDigit(int num)
+{
+    if (num / 10 > num % 10) Console.Write($"Digit {num / 10} is the biggest");
+    else Console.Write($"Digit {num % 10} is the biggest");
+}
+BiggerDigit(number);
