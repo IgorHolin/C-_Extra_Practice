@@ -1,13 +1,15 @@
-﻿// 12. Удалить вторую цифру трёхзначного числа
+﻿// 13. Выяснить, кратно ли число заданному, если нет, вывести остаток.
 
-int n = new Random().Next(100,1000);
-Console.WriteLine($"Number is {n}");
+Console.Write("Enter the number please: ");
+int x = Convert.ToInt32(Console.ReadLine());
 
-void DeleteDigit(int num)
+int number = new Random().Next(1000,99999);
+Console.WriteLine($"Number to check - {number}");
+
+void Devide(int num, int numb)
 {
-    string x = (num/100).ToString();
-    string y = (num%10).ToString();
-    Console.Write($"The number without second digit is {x}{y}");
+    if (numb%num == 0) Console.Write("Yes");
+    else Console.Write("NO");
 }
 
-DeleteDigit(n);
+Devide(number, x);
