@@ -1,17 +1,14 @@
-﻿// 16. Дано число обозначающее день недели. Выяснить является номер дня недели выходным 
+﻿// 17. По двум заданным числам проверять является ли одно квадратом другого
 
 
-Console.Write("Enter the number of the day of the week: ");
-int day = Convert.ToInt32(Console.ReadLine());
-while (day < 1 || day > 7)
+Console.Write("Enter the first number please: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the second power please: ");
+int y = Convert.ToInt32(Console.ReadLine());
+
+bool PowerOrNot(int a, int b)
 {
-    Console.Write("Enter the number of the day of the week: ");
-    day = Convert.ToInt32(Console.ReadLine());
+    return (a == b * b || b == a * a);
 }
 
-bool DayOff(int num)
-{
-    return (num == 6 || num == 7);
-}
-
-Console.Write(DayOff(day));
+Console.Write(PowerOrNot(x,y));
