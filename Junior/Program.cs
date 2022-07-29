@@ -1,11 +1,17 @@
-﻿// 15. Дано число. Проверить кратно ли оно 7 и 23
+﻿// 16. Дано число обозначающее день недели. Выяснить является номер дня недели выходным 
 
-Console.Write("Enter the number please: ");
-int x = Convert.ToInt32(Console.ReadLine());
 
-bool Divide(int num)
+Console.Write("Enter the number of the day of the week: ");
+int day = Convert.ToInt32(Console.ReadLine());
+while (day < 1 || day > 7)
 {
-    return (num % 7 == 0 && num % 23 == 0);
+    Console.Write("Enter the number of the day of the week: ");
+    day = Convert.ToInt32(Console.ReadLine());
 }
 
-Console.Write(Divide(x));
+bool DayOff(int num)
+{
+    return (num == 6 || num == 7);
+}
+
+Console.Write(DayOff(day));
