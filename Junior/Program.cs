@@ -1,17 +1,15 @@
-﻿// 19. Определить номер четверти плоскости, в которой находится точка с координатами Х и У, причем X ≠ 0 и Y ≠ 0
+﻿// 20. Задать номер четверти, показать диапазоны для возможных координат
 
+Console.Write("Enter the number of quarter please: ");
+int q = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Enter x plesae. NB, x != 0: ");
-int x = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter y plesae. NB, y != 0: ");
-int y = Convert.ToInt32(Console.ReadLine());
-
-void WhichQuarter(int a, int b)
+while (q > 4 || q < 1)
 {
-    if (a > 0 & b > 0) Console.Write("First quarter");
-    else if (a < 0 && b > 0) Console.Write("Second quarter");
-    else if (a < 0 && b < 0) Console.Write("Third quarter");
-    else Console.Write("Fourth quarter");
+    Console.Write("Enter number from 1 to 4: ");
+    q = Convert.ToInt32(Console.ReadLine());
 }
 
-WhichQuarter(x, y);
+if (q == 1) Console.Write("Range of x from 0 to +infinity, range of y from 0 to +infinity");
+if (q == 2) Console.Write("Range of x from 0 to -infinity, range of y from 0 to +infinity");
+if (q == 3) Console.Write("Range of x from 0 to -infinity, range of y from 0 to -infinity");
+if (q == 4) Console.Write("Range of x from 0 to +infinity, range of y from 0 to -infinity");
