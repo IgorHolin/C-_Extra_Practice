@@ -1,15 +1,17 @@
-﻿// 20. Задать номер четверти, показать диапазоны для возможных координат
+﻿// 21. Программа проверяет пятизначное число на палиндромом. 12321
 
-Console.Write("Enter the number of quarter please: ");
-int q = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter 5-digit number please: ");
+int x = Convert.ToInt32(Console.ReadLine());
 
-while (q > 4 || q < 1)
+while (x < 10000 || x > 99999)
 {
-    Console.Write("Enter number from 1 to 4: ");
-    q = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Number should contain 5 digits. Enter once again please: ");
+    x = Convert.ToInt32(Console.ReadLine());
 }
 
-if (q == 1) Console.Write("Range of x from 0 to +infinity, range of y from 0 to +infinity");
-if (q == 2) Console.Write("Range of x from 0 to -infinity, range of y from 0 to +infinity");
-if (q == 3) Console.Write("Range of x from 0 to -infinity, range of y from 0 to -infinity");
-if (q == 4) Console.Write("Range of x from 0 to +infinity, range of y from 0 to -infinity");
+bool PolyOrNot(int num)
+{
+    return (num / 10000 == num % 10 && (num / 1000) % 10 == (num / 10) % 10);
+}
+
+Console.Write(PolyOrNot(x));
