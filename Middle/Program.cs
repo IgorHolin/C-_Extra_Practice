@@ -1,15 +1,18 @@
-﻿// 25. Найти сумму чисел от 1 до А
+﻿// 26. Возведите число А в натуральную степень B используя цикл
 
 Console.Write("Enter the number please: ");
 int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the power please: ");
+int y = Convert.ToInt32(Console.ReadLine());
 
-int SumOf(int n)
+int Multi(int number, int power)
 {
-    int sum = 0;
-    for (int i = 1; i <= n; i++)
+    int result = 1;
+    for (int i = 1; i <= power; i++)
     {
-        sum += i;
+        result *= number;
     }
-    return sum;
+    return result;
 }
-Console.Write(SumOf(x));
+
+Console.Write(Multi(x,y));
