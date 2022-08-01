@@ -1,15 +1,9 @@
-﻿// 23. Показать таблицу квадратов чисел от 1 до N 
-
+﻿// 24. Найти кубы чисел от 1 до N
 
 Console.Write("Enter the number please: ");
-int x = Convert.ToInt32(Console.ReadLine());
+double x = Convert.ToDouble(Console.ReadLine());
 
-void DoublePower(int n)
+for (int i = 1; i <= x; i++)
 {
-    for (int i = 1; i <= n; i++)
-    {
-        Console.WriteLine($"Second power of {i} - {i*i}");
-    }
+    Console.WriteLine($"3rd power of {i} - {Math.Pow(i, 3)}");
 }
-
-DoublePower(x);
