@@ -1,9 +1,15 @@
-﻿// 24. Найти кубы чисел от 1 до N
+﻿// 25. Найти сумму чисел от 1 до А
 
 Console.Write("Enter the number please: ");
-double x = Convert.ToDouble(Console.ReadLine());
+int x = Convert.ToInt32(Console.ReadLine());
 
-for (int i = 1; i <= x; i++)
+int SumOf(int n)
 {
-    Console.WriteLine($"3rd power of {i} - {Math.Pow(i, 3)}");
+    int sum = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        sum += i;
+    }
+    return sum;
 }
+Console.Write(SumOf(x));
