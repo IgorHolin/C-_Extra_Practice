@@ -1,18 +1,36 @@
-﻿// 26. Возведите число А в натуральную степень B используя цикл
+﻿// 27. Определить количество цифр в числе
+
+//string
 
 Console.Write("Enter the number please: ");
 int x = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter the power please: ");
-int y = Convert.ToInt32(Console.ReadLine());
 
-int Multi(int number, int power)
+void HowMuch(int num)
 {
-    int result = 1;
-    for (int i = 1; i <= power; i++)
+    int result;
+    string y = num.ToString();
+    if (y.Contains("-") == true)
     {
-        result *= number;
+        result = y.Length - 1;
+    }
+    else result = y.Length;
+    Console.Write($"Amount of digits in {num} is {result}");
+}
+HowMuch(x);
+
+//int
+
+Console.Write("Enter the number please: ");
+int x = Convert.ToInt32(Console.ReadLine());
+
+int HowMuch(int y)
+{
+    int result = 0;
+    for (int i = 0; y != 0; i++)
+    {
+        y = y / 10;
+        result++;
     }
     return result;
 }
-
-Console.Write(Multi(x,y));
+Console.Write($"Amoutn of digits in {x} - {HowMuch(x)}");
