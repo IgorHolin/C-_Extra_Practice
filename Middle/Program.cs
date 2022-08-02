@@ -1,17 +1,12 @@
-﻿// 28. Подсчитать сумму цифр в числе
+﻿// 29. Написать программу вычисления произведения чисел от 1 до N
 
 Console.Write("Enter the number please: ");
 int x = Convert.ToInt32(Console.ReadLine());
 
-int SumOf(int n)
+int Fact(int n)
 {
-    int sum = 0;
-    while (n != 0)
-    {
-        sum += n % 10;
-        n /= 10;
-    }
-    return sum;
+    if (n == 1) return 1;
+    else return n * Fact(n-1);
 }
 
-Console.Write(SumOf(x));
+Console.Write(Fact(x));
