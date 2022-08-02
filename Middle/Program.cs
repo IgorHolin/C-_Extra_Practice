@@ -1,12 +1,12 @@
-﻿// 29. Написать программу вычисления произведения чисел от 1 до N
+﻿// 30. Показать кубы чисел, заканчивающихся на четную цифру
 
 Console.Write("Enter the number please: ");
 int x = Convert.ToInt32(Console.ReadLine());
 
-int Fact(int n)
+void Cube(int n)
 {
-    if (n == 1) return 1;
-    else return n * Fact(n-1);
+    if (n % 2 != 0) Console.Write($"{n} is odd!");
+    else Console.Write($"Third power of {n} is {n*n*n}");
 }
 
-Console.Write(Fact(x));
+Cube(x);
