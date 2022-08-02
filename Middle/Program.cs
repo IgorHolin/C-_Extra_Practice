@@ -1,36 +1,17 @@
-﻿// 27. Определить количество цифр в числе
-
-//string
+﻿// 28. Подсчитать сумму цифр в числе
 
 Console.Write("Enter the number please: ");
 int x = Convert.ToInt32(Console.ReadLine());
 
-void HowMuch(int num)
+int SumOf(int n)
 {
-    int result;
-    string y = num.ToString();
-    if (y.Contains("-") == true)
+    int sum = 0;
+    while (n != 0)
     {
-        result = y.Length - 1;
+        sum += n % 10;
+        n /= 10;
     }
-    else result = y.Length;
-    Console.Write($"Amount of digits in {num} is {result}");
+    return sum;
 }
-HowMuch(x);
 
-//int
-
-Console.Write("Enter the number please: ");
-int x = Convert.ToInt32(Console.ReadLine());
-
-int HowMuch(int y)
-{
-    int result = 0;
-    for (int i = 0; y != 0; i++)
-    {
-        y = y / 10;
-        result++;
-    }
-    return result;
-}
-Console.Write($"Amoutn of digits in {x} - {HowMuch(x)}");
+Console.Write(SumOf(x));
