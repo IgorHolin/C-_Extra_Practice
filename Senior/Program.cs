@@ -1,34 +1,26 @@
-﻿// 33. Задать массив из 12 элементов, заполненных числами из [0,9]. Найти сумму положительных/отрицательных элементов массива
+﻿// 34. Написать программу замену элементов массива на противоположные
 
-int[] newa = new int[12];
+int[] arr = new int[10];
 
-void Fill(int[] arr)
+void FillPrint(int[] mass)
 {
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < mass.Length; i++)
     {
-        arr[i] = new Random().Next(9);
-    }
-}
-Fill(newa);
-
-void Print(int[] ar)
-{
-    foreach (var item in ar)
-    {
-        Console.Write(item + " ");
+        mass[i] = new Random().Next(-9,10);
+        Console.Write(mass[i] + "\t");
     }
 }
 
-Print(newa);
+FillPrint(arr);
+Console.WriteLine();
 
-int resulT(int[] mas)
+void Change(int[] ar)
 {
-    int result = 0;
-    for (int i = 0; i < mas.Length; i++)
+    for (int i = 0; i < ar.Length; i++)
     {
-        result += mas[i];
+        ar[i] = -ar[i];
+        Console.Write(ar[i] + "\t");
     }
-    return result;
 }
 
-Console.Write($"Result: {resulT(newa)}");
+Change(arr);
