@@ -1,9 +1,34 @@
-﻿// 32. Задать массив из 8 элементов, заполненных нулями и единицами вывести их на экран 
+﻿// 33. Задать массив из 12 элементов, заполненных числами из [0,9]. Найти сумму положительных/отрицательных элементов массива
 
-int[] newA = new int[8];
+int[] newa = new int[12];
 
-for (int i = 0; i < newA.Length; i++)
+void Fill(int[] arr)
 {
-    newA[i] = new Random().Next(2);
-    Console.Write(newA[i] + " ");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = new Random().Next(9);
+    }
 }
+Fill(newa);
+
+void Print(int[] ar)
+{
+    foreach (var item in ar)
+    {
+        Console.Write(item + " ");
+    }
+}
+
+Print(newa);
+
+int resulT(int[] mas)
+{
+    int result = 0;
+    for (int i = 0; i < mas.Length; i++)
+    {
+        result += mas[i];
+    }
+    return result;
+}
+
+Console.Write($"Result: {resulT(newa)}");
