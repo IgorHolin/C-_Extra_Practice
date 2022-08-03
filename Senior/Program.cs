@@ -1,9 +1,9 @@
-﻿// 31. Задать массив из 8 элементов и вывести их на экран 
+﻿// 32. Задать массив из 8 элементов, заполненных нулями и единицами вывести их на экран 
 
-int[] newArr = new int[8];
+int[] newA = new int[8];
 
-for (int i = 0; i < newArr.Length; i++)
+for (int i = 0; i < newA.Length; i++)
 {
-    newArr[i] = new Random().Next(1,10);
-    Console.Write(newArr[i] + " ");
+    newA[i] = new Random().Next(2);
+    Console.Write(newA[i] + " ");
 }
