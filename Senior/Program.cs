@@ -1,15 +1,25 @@
-﻿// 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
+﻿// 38. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 
-int[] newarr = new int[123];
 
-int count = 0;
-for (int i = 0; i < newarr.Length; i++)
+int size = Convert.ToInt32(Console.ReadLine());
+int[] arr = new int[size];
+
+void FillPrint(int[] a, int s)
 {
-    newarr[i] = new Random().Next(150);
-    if (newarr[i] >= 10 && newarr[i] < 100) count++;
-    Console.Write(newarr[i] + " ");
+    for (int i = 0; i < a.Length; i++)
+    {
+        a[i] = new Random().Next(1, 101);
+        Console.Write(a[i] + " ");
+    }
 }
+
+FillPrint(arr, size);
 Console.WriteLine();
-Console.Write($"Amount of numbers [10;99] is {count}");
 
+int sum = 0;
+for (int i = 0; i < arr.Length; i += 2)
+{
+    sum += arr[i];
+}
 
+Console.Write($"Sum of numbers with odd index is: {sum}");
