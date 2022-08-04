@@ -1,17 +1,21 @@
-﻿// 35. Определить, присутствует ли в заданном массиве, некоторое число 
+﻿// 36. Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
+
 
 Console.Write("Enter the size of array please: ");
 int size = Convert.ToInt32(Console.ReadLine());
-Console.Write("Enter the the number to find: ");
-int num = Convert.ToInt32(Console.ReadLine());
-int[] arr = new int[size];
+int[] newa = new int[size];
 
-for (int i = 0; i < size; i++)
+void FillAndPrintAndCount(int[] arr, int n)
 {
-    arr[i] = new Random().Next(0, 21);
-    Console.Write(arr[i] + "\t");
+    int count = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = new Random().Next(100, 1000);
+        Console.Write(arr[i] + "\t");
+        if (arr[i] % 2 == 0) count++;
+    }
+    Console.WriteLine();
+    Console.Write($"The number of even numbers in array is: {count}");
 }
-Console.WriteLine();
 
-if (arr.Contains(num) == true) Console.Write($"{num} is in array.");
-else Console.Write($"Array doesnt contain {num}");
+FillAndPrintAndCount(newa, size);
