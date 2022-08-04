@@ -1,21 +1,15 @@
-﻿// 36. Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
+﻿// 37. В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99]
 
+int[] newarr = new int[123];
 
-Console.Write("Enter the size of array please: ");
-int size = Convert.ToInt32(Console.ReadLine());
-int[] newa = new int[size];
-
-void FillAndPrintAndCount(int[] arr, int n)
+int count = 0;
+for (int i = 0; i < newarr.Length; i++)
 {
-    int count = 0;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        arr[i] = new Random().Next(100, 1000);
-        Console.Write(arr[i] + "\t");
-        if (arr[i] % 2 == 0) count++;
-    }
-    Console.WriteLine();
-    Console.Write($"The number of even numbers in array is: {count}");
+    newarr[i] = new Random().Next(150);
+    if (newarr[i] >= 10 && newarr[i] < 100) count++;
+    Console.Write(newarr[i] + " ");
 }
+Console.WriteLine();
+Console.Write($"Amount of numbers [10;99] is {count}");
 
-FillAndPrintAndCount(newa, size);
+
