@@ -1,31 +1,27 @@
-﻿// 39. Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+﻿// 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
 
 Console.Write("Enter the number of digits in array: ");
 int size = Convert.ToInt32(Console.ReadLine());
 
-int[] arr = new int[size];
+double[] arr = new double[size];
 
-void FillPrint(int[] ar)
+for (int i = 0; i < size; i++)
 {
-    for (int i = 0; i < ar.Length; i++)
-    {
-        ar[i] = new Random().Next(100);
-        Console.Write(ar[i] + " ");
-    }
+    arr[i] = new Random().NextDouble() * 100;
+    arr[i] = Math.Round(arr[i], 2);
 }
 
-void PairSum(int[] mas)
+for (int i = 0; i < size - 1; i++)
 {
-    int count = mas.Length - 1;
-    for (int j = 0; j < mas.Length / 2; j++)
+    for (int j = i + 1; j > 0; j--)
     {
-        int res = 0;
-        res = mas[j] * mas[count];
-        Console.WriteLine($"Sum of {j+1} pair of nums in array = {res}");
-        count--;
+        if (arr[j] > arr[i])
+        {
+            double temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
     }
 }
-
-FillPrint(arr);
-Console.WriteLine();
-PairSum(arr);
+Console.WriteLine("Array : " + "[" + string.Join("; ", arr) + "]");
+Console.Write($"Differ btween maximal and minimal digits of array is: {arr[0] - arr[size - 1]}");
