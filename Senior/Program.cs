@@ -20,7 +20,7 @@ void PairSum(int[] mas)
     for (int j = 0; j < mas.Length / 2; j++)
     {
         int res = 0;
-        res = mas[j] + mas[count];
+        res = mas[j] * mas[count];
         Console.WriteLine($"Sum of {j+1} pair of nums in array = {res}");
         count--;
     }
