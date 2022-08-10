@@ -1,27 +1,62 @@
-﻿// 40. В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
+﻿// 41. QuickSort Realization
 
-Console.Write("Enter the number of digits in array: ");
+Console.Write("Enter the amount of digits in array: ");
 int size = Convert.ToInt32(Console.ReadLine());
 
-double[] arr = new double[size];
+int[] inputArray = new int[size];
 
-for (int i = 0; i < size; i++)
+void FillArray(int[] array)
 {
-    arr[i] = new Random().NextDouble() * 100;
-    arr[i] = Math.Round(arr[i], 2);
-}
-
-for (int i = 0; i < size - 1; i++)
-{
-    for (int j = i + 1; j > 0; j--)
+    for (int i = 0; i < array.Length; i++)
     {
-        if (arr[j] > arr[i])
-        {
-            double temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
+        array[i] = new Random().Next(1, 101);
     }
 }
-Console.WriteLine("Array : " + "[" + string.Join("; ", arr) + "]");
-Console.Write($"Differ btween maximal and minimal digits of array is: {arr[0] - arr[size - 1]}");
+
+void PrintArray(int[] array)
+{
+    Console.Write("[" + string.Join(", ", array) + "]");
+}
+
+FillArray(inputArray);
+PrintArray(inputArray);
+
+int[] qsort(int[] array, int minIndex, int maxIndex)
+{
+    if (minIndex >= maxIndex) return array;
+
+    int pivotIndex = GetPivotIndex(array, minIndex, maxIndex);
+
+    qsort(array, minIndex, pivotIndex - 1);
+    qsort(array, pivotIndex + 1, maxIndex);
+
+    return array;
+}
+
+void Swap(ref int left, ref int right)
+{
+    int temp = left;
+    left = right;
+    right = temp;
+}
+
+int GetPivotIndex(int[] array, int min, int max)
+{
+    int pivot = min - 1;
+
+    for (int i = min; i <= max; i++)
+    {
+        if (array[i] < array[max])
+        {
+            pivot++;
+            Swap(ref array[pivot], ref array[i]);
+        }
+    }
+    pivot++;
+    Swap(ref array[pivot], ref array[max]);
+    return pivot;
+}
+
+int[] sortArray = qsort(inputArray, 0, size - 1);
+Console.WriteLine();
+Console.Write($"Sorted array: [ {string.Join(", ", sortArray)} ]");
