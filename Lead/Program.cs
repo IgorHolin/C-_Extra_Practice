@@ -1,15 +1,17 @@
-﻿// 41. Выяснить являются ли три числа сторонами треугольника 
+﻿// 42. Определить сколько чисел больше 0 введено с клавиатуры
 
-Console.WriteLine("Enter the side length: ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the side length: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the side length: ");
-int c = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the number of digits: ");
+int size = Convert.ToInt32(Console.ReadLine());
 
-bool Triangle(int fside, int sside, int tside)
+int PositiveAmount(int amount)
 {
-    return (a + b > c && a + c > b && b + c > a);
+    int counter = 0;
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write("Enter the digit please: ");
+        int digit = Convert.ToInt32(Console.ReadLine());
+        if (digit > 0) counter++;
+    }
+    return counter;
 }
-
-Console.WriteLine(Triangle(a,b,c));
+Console.Write($"The amount of positive digits you've entered is {PositiveAmount(size)}");
