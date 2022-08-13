@@ -1,17 +1,18 @@
-﻿// 42. Определить сколько чисел больше 0 введено с клавиатуры
+﻿// 43. Написать программу преобразования десятичного числа в двоичное
 
-Console.Write("Enter the number of digits: ");
-int size = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the number please: ");
+int num = Convert.ToInt32(Console.ReadLine());
 
-int PositiveAmount(int amount)
+string GetNum(int number)
 {
-    int counter = 0;
-    for (int i = 0; i < size; i++)
+    string res = string.Empty;
+    while (number != 0)
     {
-        Console.Write("Enter the digit please: ");
-        int digit = Convert.ToInt32(Console.ReadLine());
-        if (digit > 0) counter++;
+        string nextdigit = (number%2).ToString();
+        res = nextdigit + res ;
+        number /= 2;
     }
-    return counter;
+    return res;
 }
-Console.Write($"The amount of positive digits you've entered is {PositiveAmount(size)}");
+
+Console.Write(GetNum(num));
